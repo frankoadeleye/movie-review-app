@@ -5,6 +5,8 @@ import StyledHeaderTitle from "./StyledHeaderTitle";
 import moviesData from "./../constants/StaticData";
 import StyledHorizontalScroll from "./StyledHorizontalScroll";
 import Movie from "./Movie";
+import StyledFooter from "./StyledFooter";
+import StyledLargeBtn from "./StyledLargeBtn";
 
 const Movies = () => {
   return (
@@ -20,6 +22,9 @@ const Movies = () => {
           <Movie key={movie.id} details={movie} />
         ))}
       </StyledHorizontalScroll>
+      <StyledFooter>
+        <StyledLargeBtn>Get Recommended Movies</StyledLargeBtn>
+      </StyledFooter>
     </>
   );
 };
