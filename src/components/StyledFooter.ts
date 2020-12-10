@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-  height: 70px;
+  height: 60px;
 `;
 export default StyledFooter;

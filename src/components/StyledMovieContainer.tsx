@@ -7,6 +7,7 @@ const StyledMovieContainer = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: inherit;
 
   ${devices.md`
     width: 640px;

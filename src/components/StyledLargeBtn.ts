@@ -10,7 +10,8 @@ const StyledLargeBtn = styled.button`
   display: block;
   margin: 0 auto;
   background: #eb6259;
-  transition: 0.1s;
+  transition: all 0.1s cubic-bezier(0.67, 0.13, 0.1, 0.81);
+  font-family: inherit;
 
   &:hover {
     cursor: pointer;
@@ -20,6 +21,19 @@ const StyledLargeBtn = styled.button`
   &:active {
     transform: translateY(4px);
     background: #2a628f;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: scaleY(0);
+    background: #ac4743;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   ${devices.md`
