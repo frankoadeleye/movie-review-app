@@ -5,6 +5,8 @@ const StyledMovieContainer = styled.section`
   background: ${(props) => props.theme.secondaryBg};
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   ${devices.md`
     width: 640px;
