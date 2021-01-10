@@ -4,8 +4,7 @@ import StyledPoster from "./StyledPoster";
 import StyledMovieTitle from "./StyledMovieTitle";
 import StyledMovieLengthYear from "./StyledMovieLengthYear";
 
-const Movie = ({ details }: any) => {
-  const { poster, name, duration, year } = details;
+const Movie = ({ poster, name, duration, year }: any) => {
   return (
     <StyledMovie>
       <StyledPoster src={poster} alt={`Movie: ${name}`} />

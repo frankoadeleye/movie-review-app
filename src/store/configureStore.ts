@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore } from "redux";
 import logger from "redux-logger";
 import rootReducer from "../reducers/index";
-import api from "../middleware/api";
+import api from "../middleware/api"; //so we built this 'api', which will replace the use of thunk or saga. It is our own custom network request handler. Below we added it to the applyMiddleware, exactly where we normally would add our thunk middleware.
 import DevTools from "../containers/devTools";
 
 const configureStore = (initialState?: any) => {
