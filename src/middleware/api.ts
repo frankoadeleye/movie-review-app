@@ -91,15 +91,9 @@ import axios from "axios";
 import { API } from "../constants/actionTypes";
 import { apiEnd, apiStart } from "../actions/ApiActions";
 //axios default config
-axios.defaults.baseURL =
-  "https://movie-database-imdb-alternative.p.rapidapi.com/";
+axios.defaults.baseURL = "https://5ffa665587478d0017d9a5ae.mockapi.io/api/v1/";
 axios.defaults.headers.common["Content-Type"] = "application/json";
-axios.defaults.headers.common["x-rapidapi-key"] =
-  "b77c6d4346msh04ed2c266860e06p1af57bjsn3c2f9a30cf6a";
-axios.defaults.headers.common["x-rapidapi-host"] =
-  "movie-database-imdb-alternative.p.rapidapi.com";
-axios.defaults.headers.common["useQueryString"] = true;
-axios.defaults.headers.common["Authorization"] = `Bearer `;
+// axios.defaults.headers.common["Authorization"] = `Bearer ${"fakeAccessToken"}`;
 /*
 
 These may look confusing, particularly because they are specific to the axios

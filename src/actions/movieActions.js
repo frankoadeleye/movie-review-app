@@ -21,7 +21,7 @@ values. Check apiPayloadCreator.
 
 export const getMovies = () =>
   getMoviesAC({
-    url: "",
+    url: "/movies",
     onSuccess: setMovies,
     onFailure: setFailedMovies,
   });
