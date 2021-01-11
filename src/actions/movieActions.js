@@ -1,6 +1,7 @@
 import { createAction } from "redux-actions";
 import { apiPayloadCreator } from "../utils/appUtils";
-import { API } from "../constants/actionTypes";
+import { API, SET_MOVIES } from "../constants/actionTypes";
+import { normalize, schema } from "normalizr";
 
 const getMoviesAC = createAction(API, apiPayloadCreator);
 /*
@@ -11,7 +12,7 @@ In apiPayloadCreator we create the payload object needed by the api
 middleware. 
 
 In apiPayloadCreator we create the payload object needed by the api
-middleware
+middleware.
 If any of url, method, onSuccess, onFailure, data, or label isn’t passed, we
 assign defaults by using the ES6 default argument syntax.
 Essentially, the return value of the apiPayloadCreator is just an object of those
@@ -32,8 +33,13 @@ export const getMovies = () =>
   */
 
 function setMovies(movies) {
-  console.log(movies);
-  return { type: "" };
+  const movieSchema = new schema.Entity("movies");
+  const movieListSchema = new schema.Array(movieSchema);
+  const normalizedData = normalize(movies, movieListSchema);
+  return {
+    type: SET_MOVIES,
+    payload: normalizedData.entities.movies,
+  };
 }
 
 function setFailedMovies(error) {

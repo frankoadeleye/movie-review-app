@@ -8,6 +8,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "./../constants/theme";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./../components/App";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Root = () => {
   return (
@@ -15,6 +17,7 @@ const Root = () => {
       <ThemeProvider theme={theme}>
         <StyledContainer>
           <Router>
+            <ToastContainer />
             <App />
           </Router>
           <GlobalStyle />
