@@ -8,6 +8,7 @@ export const apiPayloadCreator = ({
   onFailure = noOp,
   label = "",
   data = null,
+  page = "",
 }) => ({
   url,
   method,
@@ -15,4 +16,5 @@ export const apiPayloadCreator = ({
   onFailure,
   data,
   label,
+  page,
 });
