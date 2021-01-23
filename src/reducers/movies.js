@@ -1,5 +1,5 @@
 import { handleActions } from "redux-actions";
-import { SET_MOVIES } from "./../constants/actionTypes";
+import { SET_MOVIES } from "../constants/actionTypes";
 
 export default handleActions(
   {

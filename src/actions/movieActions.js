@@ -2,6 +2,7 @@ import { createAction } from "redux-actions";
 import { apiPayloadCreator } from "../utils/appUtils";
 import { API, SET_MOVIES } from "../constants/actionTypes";
 import { normalize, schema } from "normalizr";
+import { GET_MOVIES } from "./../constants/labels";
 
 const getMoviesAC = createAction(API, apiPayloadCreator);
 /*
@@ -25,6 +26,7 @@ export const getMovies = () =>
     url: "/movies",
     onSuccess: setMovies,
     onFailure: setFailedMovies,
+    label: GET_MOVIES,
   });
 /*
   Finally, the getMovies action creator is then created. This invokes getMoviesAC
