@@ -1,8 +1,26 @@
 import { createAction } from "redux-actions";
 import { apiPayloadCreator } from "../utils/appUtils";
-import { API, SET_MOVIES } from "../constants/actionTypes";
+import { API, MOVIE_SELECTED, SET_MOVIES } from "../constants/actionTypes";
 import { normalize, schema } from "normalizr";
 import { GET_MOVIES } from "./../constants/labels";
+import { MOVIE_RATED } from "./../constants/actionTypes";
+
+export function selectMovie(id) {
+  return {
+    type: MOVIE_SELECTED,
+    payload: id,
+  };
+}
+
+export function rateMovie({ rating, movieId }) {
+  return {
+    type: MOVIE_RATED,
+    payload: {
+      rating,
+      movieId,
+    },
+  };
+}
 
 const getMoviesAC = createAction(API, apiPayloadCreator);
 /*

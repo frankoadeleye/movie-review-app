@@ -1,6 +1,5 @@
 import React from "react";
 import { Provider } from "react-redux";
-import store from "../store";
 import DevTools from "./devTools";
 import StyledContainer from "../components/StyledContainer";
 import GlobalStyle from "../injectGlobalStyles";
@@ -9,21 +8,25 @@ import theme from "./../constants/theme";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./../components/App";
 import { ToastContainer } from "react-toastify";
+import { PersistGate } from "redux-persist/integration/react";
+import store, { persiststore } from "../store";
 import "react-toastify/dist/ReactToastify.css";
 
 const Root = () => {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <StyledContainer>
-          <Router>
-            <ToastContainer />
-            <App />
-          </Router>
-          <GlobalStyle />
-          <DevTools />
-        </StyledContainer>
-      </ThemeProvider>
+      <PersistGate persistor={persiststore} loading={null}>
+        <ThemeProvider theme={theme}>
+          <StyledContainer>
+            <Router>
+              <ToastContainer />
+              <App />
+            </Router>
+            <GlobalStyle />
+            <DevTools />
+          </StyledContainer>
+        </ThemeProvider>
+      </PersistGate>
     </Provider>
   );
 };

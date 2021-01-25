@@ -5,3 +5,5 @@ export const API_START = "API_START";
 export const API_END = "API_END";
 export const SHOW_TOAST = "SHOW_TOAST";
 export const SET_MOVIES = "SET_MOVIES";
+export const MOVIE_SELECTED = "MOVIE_SELECTED";
+export const MOVIE_RATED = "MOVIE_RATED";
